@@ -77,9 +77,11 @@ abstract class WordRoomDatabase extends RoomDatabase {
                 WordDao dao = INSTANCE.wordDao();
                 dao.deleteAll();
 
-                Word word = new Word("Hello");
+                Word word = new Word();
+                word.setWord("Hello");
                 dao.insert(word);
-                word = new Word("World");
+                word = new Word();
+                word.setWord("World");
                 dao.insert(word);
             });
         }
